@@ -1754,5 +1754,13 @@ document.getElementById("refereeCount").textContent=`（全${refereeQuestions.le
 document.getElementById("upperCount").textContent=`（全${upperQuestions.length}問）`;
 document.getElementById("mannerCount").textContent=`（全${mannerQuestions.length}問）`;
 </script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').catch(err => console.warn('Service Worker registration failed:', err));
+  });
+}
+</script>
 </body>
 </html>
